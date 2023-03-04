@@ -16,7 +16,8 @@ standard <- tbls[[1]] %>%
   mutate(
     name = tolower(name),
     name = str_replace_all(name, '[^a-z]', '_'),
-    hexadecimal = str_sub(hexadecimal, 1, 7)
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
   filter(hexadecimal != '')
 
