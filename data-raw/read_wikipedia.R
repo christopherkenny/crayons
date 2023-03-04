@@ -5,8 +5,14 @@ wiki <- read_html('https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors')
 tbls <- html_elements(wiki, '.wikitable') %>% lapply(html_table)
 
 standard <- tbls[[1]] %>%
-  select(Name, starts_with('Hexadecimal')) %>%
+  select(Name, starts_with('Hexadecimal'), ends_with('Box')) %>%
   rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  rename(
+    box_16 = `16-box`,
+    box_24 = `24-box`,
+    box_32 = `32-box`,
+    box_64 = `64-box`
+  ) %>%
   mutate(
     name = tolower(name),
     name = str_replace_all(name, '[^a-z]', '_'),
