@@ -20,7 +20,7 @@ pick_colors <- function(hex, k) {
       as.matrix()
 
   idx <- vapply(seq_len(k), function(i) {
-    which.max(dists[i, -seq_len(k)])
+    which.min(dists[i, -seq_len(k)])
   }, FUN.VALUE = integer(1L))
 
   hex[idx]
