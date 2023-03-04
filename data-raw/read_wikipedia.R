@@ -140,4 +140,119 @@ color_n_smell <- tbls[[9]] %>%
 star_brite <- tbls[[10]] %>%
   select(hexadecimal = `Hex Code`)
 
-# tbls[[3]] = Color Mix-Up
+# tbls[[11]] = Color Mix-Up multi-color
+
+
+pearl_brite <- tbls[[12]] %>%
+  unlist() %>%
+  unname() %>%
+  enframe(name = 'id') %>%
+  mutate(
+    name = ifelse(id %% 2 == 1, value, NA_character_),
+    hexadecimal = ifelse(id %% 2 == 0, value, NA_character_)
+  ) %>%
+  fill(hexadecimal, .direction = 'up') %>%
+  filter(!is.na(name)) %>%
+  select(name, hexadecimal) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '\'', ''),
+    name = str_replace_all(name, '\\(.+?\\)', ''),
+    name = str_replace_all(name, '\\)', ''),
+    name = str_squish(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    name = str_replace_all(name, '_pearl', ''),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+# tbls[[13]] = glitter
+# tbls[[14]] = glitter 2019 (no hexadecimals)
+
+construction_paper <- tbls[[15]] %>%
+  select(hexadecimal = `Hex Code`)
+
+metallic_fx <- tbls[[16]] %>%
+  select(name = Name, hexadecimal = `Hex Code`) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+gel_fx <- tbls[[17]] %>%
+  select(hexadecimal = `Hex Code`)
+
+pearl <- tbls[[18]] %>%
+  select(name = Name, hexadecimal = Hex) %>%
+  mutate(
+    name = tolower(name),
+    name = stringi::stri_trans_general(name, id = 'Latin-ASCII'), # remove accents
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+# tbls[[19]] = neon (no hexadecimals)
+
+colors_of_the_world <- tbls[[20]] %>%
+  select(name = Name, hexadecimal = Hex) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+silly_scents <- tbls[[21]] %>%
+  select(name = `Color Name`, hexadecimal = `Hex Code`) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '\'', ''),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+heads_n_tails <- tbls[[22]] %>%
+  unlist() %>%
+  unname() %>%
+  enframe(name = 'id') %>%
+  mutate(
+    name = ifelse(id %% 2 == 1, value, NA_character_),
+    hexadecimal = ifelse(id %% 2 == 0, value, NA_character_)
+  ) %>%
+  fill(hexadecimal, .direction = 'up') %>%
+  filter(!is.na(name)) %>%
+  select(name, hexadecimal) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+billionth <- tbls[[23]] %>%
+  select(name = Crayon, hexadecimal = `Hexadecimal code`) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+mini_twistables <- tbls[[24]] %>%
+  select(name = Name, hexadecimal = `Hex Code`) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '\'', ''),
+    name = str_replace_all(name, '\\(.+?\\)', ''),
+    name = str_replace_all(name, '\\)', ''),
+    name = str_squish(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7)
+  ) %>%
+  filter(hexadecimal != '')
+
+# tbls[[25]] = true_to_life
