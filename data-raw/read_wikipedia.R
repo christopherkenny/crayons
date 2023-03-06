@@ -263,3 +263,35 @@ mini_twistables <- tbls[[24]] %>%
   filter(hexadecimal != '')
 
 # tbls[[25]] = true_to_life
+
+crayons <- list(
+  billionth = deframe(billionth),
+  color_n_smell = deframe(color_n_smell),
+  colors_of_the_world = deframe(colors_of_the_world),
+  construction_paper = deframe(construction_paper),
+  fluorescent = deframe(fluorescent),
+  gel_fx = deframe(gel_fx),
+  gem_tones = deframe(gem_tones),
+  heads_n_tails = deframe(heads_n_tails),
+  magic_scent = deframe(magic_scent),
+  metallic_fx = deframe(metallic_fx),
+  mini_twistables = deframe(mini_twistables),
+  multicultural = deframe(multicultural),
+  pearl = deframe(pearl),
+  pearl_brite = deframe(pearl_brite),
+  silly_scents = deframe(silly_scents),
+  silver_swirls = deframe(silver_swirls),
+  standard = deframe(select(standard, 1:2)),
+  standard16 = deframe(select(filter(standard, box_16), 1:2)),
+  standard24 = deframe(select(filter(standard, box_24), 1:2)),
+  standard32 = deframe(select(filter(standard, box_32), 1:2)),
+  standard64 = deframe(select(filter(standard, box_64), 1:2)),
+  star_brite = deframe(star_brite)
+)
+
+crayons <- lapply(crayons, function(x) {
+  class(x) <- c('palette', 'character')
+  x
+})
+
+dput(crayons)
