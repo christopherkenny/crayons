@@ -18,13 +18,13 @@ scale_colour_crayons(
 )
 }
 \arguments{
-\item{palette}{TODO}
+\item{palette}{palette from \code{names(crayons)} to use}
 
-\item{which}{TODO}
+\item{which}{numeric indices of colors to use. \code{NULL} by default.}
 
-\item{...}{arguments passed on to [ggplot2::discrete_scale()}
+\item{...}{arguments passed on to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}}}
 
-\item{reverse}{TODO}
+\item{reverse}{Should the vector be reversed? Default is \code{FALSE}.}
 }
 \description{
 Crayon Color Scales for \code{ggplot2}
