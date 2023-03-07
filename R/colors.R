@@ -15,7 +15,12 @@
 #' - **magic_scent**, scented colors
 #' - **metallic_fx**, metal colors
 #' - **mini_twistables**, colors, but twistable
+#' - **modern**, historical colors since 1990
+#' - **munsell**, historical colors 1926-1944
 #' - **multicultural**, skin colors
+#' - **no_48**, historical crayons 48-pack in 1949
+#' - **no_64**, historical crayons 64-pack in 1958
+#' - **original**, historical crayons original in 1903
 #' - **pearl**, updated perlescent colors
 #' - **pearl_brite**, pearlescent colors
 #' - **silly_scents**, scented in reality but not in R
@@ -41,7 +46,12 @@
 #' plot(crayons$magic_scent)
 #' plot(crayons$metallic_fx)
 #' plot(crayons$mini_twistables)
+#' plot(crayons$modern)
+#' plot(crayons$munsell)
 #' plot(crayons$multicultural)
+#' plot(crayons$no_48)
+#' plot(crayons$no_64)
+#' plot(crayons$original)
 #' plot(crayons$pearl)
 #' plot(crayons$pearl_brite)
 #' plot(crayons$silly_scents)
@@ -164,12 +174,88 @@ crayons = list(
       violet_red = '#F75394', white = '#FFFFFF', yellow = '#FCE883',
       yellow_green = '#C5E384', yellow_orange = '#FFAE42'
     ), class = c('palette', 'character')),
-  multicultural = structure(
-    c(
+  modern = structure(c(scarlet = "#FD0E35", sunset_orange = "#FE4C40", vivid_tangerine = "#FF9980",
+                       macaroni_and_cheese = "#FFB97B", mango_tango = "#E77200", banana_mania = "#FBE7B2",
+                       dandelion = "#FED85D", canary = "#FFFF99", inchworm = "#AFE313",
+                       asparagus = "#7BA05B", granny_smith_apple = "#9DE093", fern = "#63B76C",
+                       shamrock = "#33CC99", mountain_meadow = "#1AB385", jungle_green = "#29AB87",
+                       caribbean_green = "#00CC99", tropical_rain_forest = "#00755E",
+                       robin_s_egg_blue = "#00CCCC", teal_blue = "#008080", outer_space = "#2D383A",
+                       pacific_blue = "#1CA9C9", cerulean = "#02A4D3", denim = "#1560BD",
+                       bluetiful = "#3C69E7", wild_blue_yonder = "#A2ADD0", indigo = "#4B0082",
+                       manatee = "#979AAA", blue_bell = "#A2A2D0", purple_heart = "#69359C",
+                       royal_purple = "#7851A9", wisteria = "#C9A0DC", vivid_violet = "#9F00FF",
+                       purple_mountains__majesty = "#9678B6", fuchsia = "#C154C1", pink_flamingo = "#FC74FD",
+                       jazzberry_jam = "#A50B5E", eggplant = "#614051", cerise = "#DE3163",
+                       wild_strawberry = "#FF43A4", cotton_candy = "#FFBCD9", razzmatazz = "#E3256B",
+                       pig_pink = "#FDDDE6", blush = "#DE5D83", tickle_me_pink = "#FC89AC",
+                       mauvelous = "#EF98AA", pink_sherbert = "#F78FA7", fuzzy_wuzzy = "#CC6666",
+                       beaver = "#9F8170", tumbleweed = "#DEAA88", desert_sand = "#EDC9AF",
+                       almond = "#EFDECD", shadow = "#8A795D", timberwolf = "#D9D6CF",
+                       antique_brass = "#CD9575"), class = c("palette", "character")),
+  munsell = structure(c(maximum_red = "#D92121", middle_red = "#E58E73",
+                        middle_yellow_red = "#ECB176", maximum_yellow_red = "#F2BA49",
+                        middle_yellow = "#FFEB00", maximum_yellow = "#FAFA37", maximum_green_yellow = "#D9E650",
+                        middle_green_yellow = "#ACBF60", maximum_green = "#5E8C31", middle_green = "#4D8C57",
+                        middle_blue_green = "#8DD9CC", maximum_blue_green = "#30BFBF",
+                        middle_blue = "#7ED4E6", maximum_blue = "#47ABCC", maximum_blue_purple = "#ACACE6",
+                        middle_blue_purple = "#8B72BE", maximum_purple = "#733380", middle_purple = "#D982B5",
+                        maximum_red_purple = "#A63A79", middle_red_purple = "#A55353",
+                        middle_grey = "#8B8680", black = "#000000"), class = c("palette",
+                                                                               "character")),
+  multicultural = structure(c(
       apricot = '#FDD5B1',
       black = '#000000', burnt_sienna = '#E97451', mahogany = '#CA3435',
       peach = '#FFCBA4', sepia = '#9E5B40', white = '#FFFFFF'
     ), class = c('palette', 'character')),
+  no_48 = structure(c(red = "#ED0A3F", dark_red = "#8B0000", indian_red = "#CD5C5C",
+                      red_orange = "#FF4500", orange = "#FF8833", medium_orange = "#ECB176",
+                      yellow_orange = "#FFAE42", medium_yellow = "#FCD667", yellow = "#FFFF00",
+                      olive_green = "#B5B35C", light_yellow = "#FFFFE0", yellow_green = "#9ACD32",
+                      dark_green = "#013220", light_green = "#90EE90", green = "#01A368",
+                      light_turquoise_blue = "[i]", turquoise_blue = "#00FFEF", middle_blue_green = "#0095B7",
+                      blue_green = "#0D98BA", azure_blue = "#4997D0", cerulean_blue = "#2A52BE",
+                      prussian_blue = "#003153", blue = "#0066FF", medium_blue = "#0000CD",
+                      cobalt_blue = "#0047AB", blue_violet = "#8A2BE2", violet = "#7F00FF",
+                      medium_violet = "#65315F", lavender = "#B57EDC", medium_red_violet = "#BB3385",
+                      light_magenta = "#FF80FF", red_violet = "#C71585", magenta = "#FF00FF",
+                      rose_pink = "#FF66CC", carmine_red = "#FF0038", salmon = "#FA8072",
+                      mahogany = "#C04000", burnt_sienna = "#E97451", brown = "#964B00",
+                      flesh = "#FFCBA4", raw_umber = "#826644", silver = "#AAA9AD",
+                      black = "#000000", neutral_gray = "#8B8680", white = "#FFFFFF"
+  ), class = c("palette", "character")),
+  no_64 = structure(c(red = "#ED0A3F", maroon = "#C32148", brick_red = "#CB4154",
+                      indian_red = "#CD5C5C", orange_red = "#FF681F", bittersweet = "#FE6F5E",
+                      burnt_orange = "#CC5500", red_orange = "#FF4500", orange = "#FF8833",
+                      yellow_orange = "#FFAE42", maize = "#F2C649", orange_yellow = "#F5BD1F",
+                      goldenrod = "#DAA520", yellow = "#FFFF00", green_yellow = "#F1E788",
+                      spring_green = "#ECEBBD", olive_green = "#B5B35C", lemon_yellow = "#FFF44F",
+                      yellow_green = "#9ACD32", forest_green = "#228B22", sea_green = "#2E8B57",
+                      green = "#008001", pine_green = "#01796F", light_blue = "#\tADD8E",
+                      sky_blue = "#76D7EA", blue_green = "#0095B7", cornflower = "#93CCEA",
+                      navy_blue = "#0066CC", blue = "#0066FF", cadet_blue = "#A9B2C3",
+                      periwinkle = "#C3CDE6", violet_blue = "#766EC8", blue_violet = "#6456B7",
+                      violet = "#8359A3", plum = "#8E3179", orchid = "#E29CD2", red_violet = "#BB3385",
+                      lavender = "#FBAED2", carnation_pink = "#FFA6C9", violet_red = "#F7468A",
+                      salmon = "#FF91A4", mahogany = "#CA3435", melon = "#FEBAAD",
+                      burnt_sienna = "#E97451", brown = "#AF593E", sepia = "#9E5B40",
+                      raw_sienna = "#D27D46", tan = "[k]", peach = "#FFCBA4", apricot = "#FDD5B1",
+                      raw_umber = "#826644", gold = "#A57C00", silver = "#AAA9AD",
+                      copper = "#B87333", black = "#000000", gray = "#8B8680", blue_gray = "#6699CC",
+                      white = "#FFFFFF"
+  ), class = c("palette", "character")),
+  original = structure(c(red = "#ED0A3F", english_vermilion = "#CC474B", madder_lake = "#CC3336",
+                         permanent_geranium_lake = "#E12C2C", indian_red = "#CD5C5C",
+                         venetian_red = "#C80815", orange = "#FF8833", medium_chrome_yellow = "#FCD667",
+                         yellow = "#FFFF00", olive_green = "#B5B35C", light_chrome_yellow = "[f]",
+                         green = "#008001", dark_chrome_green = "#01786F", blue = "#2EB4E6",
+                         prussian_blue = "[g]", cobalt_blue = "#0047AB", celestial_blue = "#4997D0",
+                         ultramarine_blue = "#4166F5", purple = "#6A0DAD", permanent_magenta = "#F653A6",
+                         rose_pink = "#FF66CC", burnt_sienna = "#E97451", van_dyke_brown = "#664228",
+                         flesh_tint = "#FFCBA4", burnt_umber = "#8A3324", raw_umber = "#826644",
+                         raw_sienna = "#D68A59", gold = "#A57C00", silver = "#AAA9AD",
+                         copper = "#B87333", black = "#000000", white = "#FFFFFF"
+  ), class = c("palette", "character")),
   pearl = structure(c(
     antique_gray = '#9F9F9F',
     apple_orchard = '#BF3F3F', berry_parfait = '#A43482', black_pearl = '#3A3A3A',

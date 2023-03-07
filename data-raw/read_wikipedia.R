@@ -1,6 +1,7 @@
 library(rvest)
 library(tidyverse)
 
+# list of colors ----
 wiki <- read_html('https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors')
 tbls <- html_elements(wiki, '.wikitable') %>% lapply(html_table)
 
@@ -264,6 +265,67 @@ mini_twistables <- tbls[[24]] %>%
 
 # tbls[[25]] = true_to_life
 
+# History of crayola crayons ----
+wiki_h <- read_html('https://en.wikipedia.org/wiki/History_of_Crayola_crayons')
+tbls_h <- html_elements(wiki_h, '.wikitable') %>% lapply(html_table)
+
+original <- tbls_h[[1]] %>%
+  select(Name, starts_with('Hexadecimal')) %>%
+  rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
+  ) %>%
+  filter(hexadecimal != '')
+
+munsell <- tbls_h[[2]] %>%
+  select(Name, starts_with('Hexadecimal')) %>%
+  rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
+  ) %>%
+  filter(hexadecimal != '')
+
+no_48 <- tbls_h[[3]] %>%
+  select(Name, starts_with('Hexadecimal')) %>%
+  rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
+  ) %>%
+  filter(hexadecimal != '')
+
+no_64 <- tbls_h[[4]] %>%
+  select(Name, starts_with('Hexadecimal')) %>%
+  rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
+  ) %>%
+  filter(hexadecimal != '')
+
+modern <- tbls_h[[5]] %>%
+  select(Name, starts_with('Hexadecimal')) %>%
+  rename_with(.fn = \(x) tolower(str_sub(x, end = 11))) %>%
+  mutate(
+    name = tolower(name),
+    name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_sub(hexadecimal, 1, 7),
+    across(starts_with('box'), \(x) x == 'Yes')
+  ) %>%
+  filter(hexadecimal != '')
+
+
+# save it ----
 crayons <- list(
   billionth = deframe(billionth),
   color_n_smell = deframe(color_n_smell),
@@ -276,7 +338,12 @@ crayons <- list(
   magic_scent = deframe(magic_scent),
   metallic_fx = deframe(metallic_fx),
   mini_twistables = deframe(mini_twistables),
+  modern = deframe(modern),
+  munsell = deframe(munsell),
   multicultural = deframe(multicultural),
+  no_48 = deframe(no_48),
+  no_64 = deframe(no_64),
+  original = deframe(original),
   pearl = deframe(pearl),
   pearl_brite = deframe(pearl_brite),
   silly_scents = deframe(silly_scents),
@@ -294,4 +361,5 @@ crayons <- lapply(crayons, function(x) {
   x
 })
 
-dput(crayons)
+dput(crayons) #%>% styler::style_text()
+
