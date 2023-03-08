@@ -12,10 +12,11 @@
 #' @examples
 #' pick_colors(crayons$standard, 10)
 pick_colors <- function(hex, n) {
+  clss <- class(hex)
   rgbs <- hex |>
     grDevices::col2rgb() |>
     t()
-  km <- kmeans(rgbs, n)
+  km <- stats::kmeans(rgbs, n)
   mat <- rbind(
     km$centers,
     rgbs
@@ -28,7 +29,9 @@ pick_colors <- function(hex, n) {
     which.min(dists[i, -seq_len(n)])
   }, FUN.VALUE = integer(1L))
 
-  hex[idx]
+  out <- hex[idx]
+  class(out) <- clss
+  out
 }
 
 # color_distance <- function(hex) {

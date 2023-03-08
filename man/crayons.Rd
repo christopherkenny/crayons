@@ -28,7 +28,12 @@ Included palettes:
 \item \strong{magic_scent}, scented colors
 \item \strong{metallic_fx}, metal colors
 \item \strong{mini_twistables}, colors, but twistable
+\item \strong{modern}, historical colors since 1990
+\item \strong{munsell}, historical colors 1926-1944
 \item \strong{multicultural}, skin colors
+\item \strong{no_48}, historical crayons 48-pack in 1949
+\item \strong{no_64}, historical crayons 64-pack in 1958
+\item \strong{original}, historical crayons original in 1903
 \item \strong{pearl}, updated perlescent colors
 \item \strong{pearl_brite}, pearlescent colors
 \item \strong{silly_scents}, scented in reality but not in R
@@ -53,7 +58,12 @@ plot(crayons$heads_n_tails)
 plot(crayons$magic_scent)
 plot(crayons$metallic_fx)
 plot(crayons$mini_twistables)
+plot(crayons$modern)
+plot(crayons$munsell)
 plot(crayons$multicultural)
+plot(crayons$no_48)
+plot(crayons$no_64)
+plot(crayons$original)
 plot(crayons$pearl)
 plot(crayons$pearl_brite)
 plot(crayons$silly_scents)

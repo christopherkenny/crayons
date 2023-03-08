@@ -1,5 +1,5 @@
 Package: crayons
-Title: What the Package Does (One Line, Title Case)
+Title: Color Palettes 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Christopher T.",
@@ -7,7 +7,10 @@ Authors@R:
            role = c("aut", "cre"),
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
-Description: What the package does (one paragraph).
+Description: Color palettes based on crayon colors since the early 1900s. Colors are 
+    based on various crayon colors, sets, and promotional palettes. All palettes
+    are discrete palettes and are not necessarily color-blind friendly. Provides some
+    basic scales for 'ggplot2' for discrete coloring.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

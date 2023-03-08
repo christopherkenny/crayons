@@ -278,7 +278,7 @@ original <- tbls_h[[1]] %>%
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', str_sub(hexadecimal, 1, 1) == '#')
 
 munsell <- tbls_h[[2]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
