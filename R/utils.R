@@ -9,8 +9,19 @@ rot_pal <- function(pal) {
   }
 }
 
-
+#' @export
 print.palette <- function(x, ...) {
+  x <- unclass(x)
+  print(x)
+
+  if (requireNamespace('cli', quietly = TRUE)) {
+    cat('\U0020')
+    for (i in seq_along(x)) {
+      cat(cli::make_ansi_style(x[[i]], bg = TRUE)('\U0020\U0020\U0020'))
+      cat('\U0020')
+    }
+  }
+
   invisible(x)
 }
 
@@ -51,7 +62,7 @@ plot.palette <- function(x, ...) {
   )
   label_loc$col[is.na(label_loc$col)] <- ''
 
-  if (requireNamespace("farver", quietly = TRUE)) {
+  if (requireNamespace('farver', quietly = TRUE)) {
     label_loc$color = ifelse(farver::decode_colour(x, to = 'hcl')[, 3] > 50, 'black', 'white')
   } else {
     label_loc$color = 'black'
