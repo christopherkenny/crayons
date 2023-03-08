@@ -20,3 +20,5 @@ BugReports: https://github.com/christopherkenny/crayons/issues
 Imports: 
     ggplot2,
     grDevices
+Suggests: 
+    farver
