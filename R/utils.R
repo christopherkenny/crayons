@@ -9,8 +9,9 @@ rot_pal <- function(pal) {
   }
 }
 
-print.palette <- function(x, ...) {
 
+print.palette <- function(x, ...) {
+  invisible(x)
 }
 
 bocks <- function(r, c) {
@@ -21,7 +22,6 @@ bocks <- function(r, c) {
     x = rep(vapply(seqc, \(row) row + c(0, 1, 1, 0), FUN.VALUE = numeric(4)), r),
     y = c(vapply(seqr, \(col) rep(col + c(0, 0, 1, 1), times = c), FUN.VALUE = numeric(4 * c)))
   )
-  # needs to be more like 0, 0, 1, 1,     1, 1, 2, 2,     2, 2, 3, 3,     3, 3, 4, 4, ...
 }
 
 #' @export
