@@ -213,7 +213,7 @@ crayons = list(
                       yellow_orange = "#FFAE42", medium_yellow = "#FCD667", yellow = "#FFFF00",
                       olive_green = "#B5B35C", light_yellow = "#FFFFE0", yellow_green = "#9ACD32",
                       dark_green = "#013220", light_green = "#90EE90", green = "#01A368",
-                      light_turquoise_blue = "[i]", turquoise_blue = "#00FFEF", middle_blue_green = "#0095B7",
+                      turquoise_blue = "#00FFEF", middle_blue_green = "#0095B7",
                       blue_green = "#0D98BA", azure_blue = "#4997D0", cerulean_blue = "#2A52BE",
                       prussian_blue = "#003153", blue = "#0066FF", medium_blue = "#0000CD",
                       cobalt_blue = "#0047AB", blue_violet = "#8A2BE2", violet = "#7F00FF",
@@ -239,7 +239,7 @@ crayons = list(
                       lavender = "#FBAED2", carnation_pink = "#FFA6C9", violet_red = "#F7468A",
                       salmon = "#FF91A4", mahogany = "#CA3435", melon = "#FEBAAD",
                       burnt_sienna = "#E97451", brown = "#AF593E", sepia = "#9E5B40",
-                      raw_sienna = "#D27D46", tan = "[k]", peach = "#FFCBA4", apricot = "#FDD5B1",
+                      raw_sienna = "#D27D46", peach = "#FFCBA4", apricot = "#FDD5B1",
                       raw_umber = "#826644", gold = "#A57C00", silver = "#AAA9AD",
                       copper = "#B87333", black = "#000000", gray = "#8B8680", blue_gray = "#6699CC",
                       white = "#FFFFFF"

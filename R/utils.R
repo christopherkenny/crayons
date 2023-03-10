@@ -15,10 +15,19 @@ print.palette <- function(x, ...) {
   print(x)
 
   if (requireNamespace('cli', quietly = TRUE)) {
+    width_console <- getOption('width')
+    brks <- 0
+    n_char <- 1
     cat('\U0020')
     for (i in seq_along(x)) {
       cat(cli::make_ansi_style(x[[i]], bg = TRUE)('\U0020\U0020\U0020'))
       cat('\U0020')
+      n_char <- n_char + 4
+      if (n_char > width_console) {
+        brks <- brks + 1
+        n_char <- 0
+        cat('\n\n ')
+      }
     }
   }
 
@@ -36,11 +45,12 @@ bocks <- function(r, c) {
 }
 
 #' @export
+#' @importFrom ggplot2 .data
 plot.palette <- function(x, ...) {
   # this is my budget version of `scales::show_col()` in ggplot
 
   n <- length(x)
-  x_in <- setNames(x, x)
+  x_in <- stats::setNames(x, x)
 
   # convert to square-able
   nc <- ceiling(sqrt(n))
@@ -68,9 +78,9 @@ plot.palette <- function(x, ...) {
     label_loc$color = 'black'
   }
 
-  ggplot2::ggplot(sq, ggplot2::aes(x = x, y = y)) +
+  ggplot2::ggplot(sq, ggplot2::aes(x = .data$x, y = .data$y)) +
     ggplot2::geom_polygon(ggplot2::aes(fill = col)) +
-    ggplot2::geom_text(data = label_loc, ggplot2::aes(label = col, color = color)) +
+    ggplot2::geom_text(data = label_loc, ggplot2::aes(label = .data$col, color = .data$color)) +
     ggplot2::guides(fill = 'none', color = 'none') +
     ggplot2::scale_fill_manual(values = x_in, na.value = 'white') +
     ggplot2::scale_color_manual(values = c('black' = 'black', 'white' = 'white')) +
