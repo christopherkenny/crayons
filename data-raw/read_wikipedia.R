@@ -357,6 +357,8 @@ crayons <- list(
   star_brite = deframe(star_brite)
 )
 
+crayons <- lapply(crayons, function(x) x[!duplicated(x)])
+
 crayons <- lapply(crayons, function(x) {
   noms <- names(x)
   if (is.null(noms)) {

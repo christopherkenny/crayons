@@ -98,20 +98,19 @@ crayons <- list(billionth = structure(c(blue_ribbon = "#0B10A2"), class = c(
   electric_lime = "#CCFF00", hot_magenta = "#FF00CC", screamin_green = "#66FF66",
   shocking_pink = "#FF6EFF", laser_lemon = "#FFFF66", purple_pizzazz = "#FF00BB",
   magic_mint = "#AAF0D1", outrageous_orange = "#FF6037", sunglow = "#FFCC33",
-  razzle_dazzle_rose = "#EE34D2", unmellow_yellow = "#FFFF66",
-  neon_carrot = "#FF9933", wild_watermelon = "#FD5B78", atomic_tangerine = "#FF9966"
+  razzle_dazzle_rose = "#EE34D2", neon_carrot = "#FF9933", wild_watermelon = "#FD5B78",
+  atomic_tangerine = "#FF9966"
 ), class = c("palette", "character")), gel_fx = structure(c(
-  "#FF3399",
-  "#12E3DB", "#0081FF", "#F58345", "#F5FF7D", "#00B6BD", "#3F48CC",
-  "#FF6699", "#99FF99", "#8F5873", "#FFBF7F", "#7853A8", "#F26D7D",
-  "#A349A4", "#7092BE", "#FFFFFF"
+  "#FF3399", "#12E3DB", "#0081FF", "#F58345",
+  "#F5FF7D", "#00B6BD", "#3F48CC", "#FF6699", "#99FF99", "#8F5873",
+  "#FFBF7F", "#7853A8", "#F26D7D", "#A349A4", "#7092BE", "#FFFFFF"
 ), class = c("palette", "character")), gem_tones = structure(c(
-  amethyst = "#64609A", citrine = "#933709",
-  moonstone = "#3AA8C1", jasper = "#D05340", emerald = "#14A989",
-  smokey_topaz = "#832A0D", rose_quartz = "#BD559C", peridot = "#ABAD48",
-  onyx = "#353839", lapis_lazuli = "#436CB9", tigers_eye = "#B56917",
-  sapphire = "#2D5DA1", malachite = "#469496", ruby = "#AA4069",
-  pink_pearl = "#B07080", jade = "#469A84"
+  amethyst = "#64609A",
+  citrine = "#933709", moonstone = "#3AA8C1", jasper = "#D05340",
+  emerald = "#14A989", smokey_topaz = "#832A0D", rose_quartz = "#BD559C",
+  peridot = "#ABAD48", onyx = "#353839", lapis_lazuli = "#436CB9",
+  tigers_eye = "#B56917", sapphire = "#2D5DA1", malachite = "#469496",
+  ruby = "#AA4069", pink_pearl = "#B07080", jade = "#469A84"
 ), class = c(
   "palette",
   "character"
@@ -124,22 +123,21 @@ crayons <- list(billionth = structure(c(blue_ribbon = "#0B10A2"), class = c(
   sweet_brown = "#A83731", orange_soda = "#FA5B3D", brown_sugar = "#AF6E4D"
 ), class = c("palette", "character")), magic_scent = structure(c(
   new_car = "#0066FF",
-  rose = "#ED0A3F", banana = "#FED85D", pine = "#01796F", strawberry = "#FF3399",
-  fresh_air = "#76D7EA", jelly_bean = "#FF8833", daffodil = "#FBE870",
-  blueberry = "#4570E6", cedar_chest = "#CA3435", eucalyptus = "#29AB87",
-  lemon = "#FBE870", cherry = "#C32148", soap = "#C3CDE6", orange = "#FF8833",
-  shampoo = "#FFA6C9", lumber = "#FDD5B1", tulip = "#FF8833", grape = "#8359A3",
-  dirt = "#9E5B40", lilac = "#C9A0DC", peach = "#FFCBA4", chocolate = "#AF593E",
-  lime = "#C5E17A", bubble_gum = "#FC80A5", smoke = "#8B8680",
-  baby_powder = "#FFFFFF", licorice = "#000000", coconut = "#FFFFFF",
-  leather_jacket = "#000000"
+  rose = "#ED0A3F", daffodil = "#FBE870", pine = "#01796F", strawberry = "#FF3399",
+  fresh_air = "#76D7EA", jelly_bean = "#FF8833", blueberry = "#4570E6",
+  banana = "#FED85D", cherry = "#C32148", eucalyptus = "#29AB87",
+  lumber = "#FDD5B1", cedar_chest = "#CA3435", soap = "#C3CDE6",
+  shampoo = "#FFA6C9", dirt = "#9E5B40", peach = "#FFCBA4", lime = "#C5E17A",
+  chocolate = "#AF593E", lilac = "#C9A0DC", grape = "#8359A3",
+  bubble_gum = "#FC80A5", smoke = "#8B8680", baby_powder = "#FFFFFF",
+  licorice = "#000000"
 ), class = c("palette", "character")), metallic_fx = structure(c(
-  alloy_orange = "#C46210", cobalt_cool = "#028AAE",
-  sheen_green = "#8FD400", rose_gold = "#C88CA4", petrified_forest = "#005B39",
-  acid_wash_jeans = "#5CB2C5", big_dip_o_ruby = "#9C2542", steel_blue = "#0081AB",
-  gold_medal = "#C5BC42", magnetic_magenta = "#BF3981", iron_indigo = "#184FA1",
-  shimmering_blush = "#D98695", metallic_seaweed = "#0A7E8C", cheese_grater = "#C89F56",
-  bittersweet_shimmer = "#BF4F51", b_dazzled_blue = "#2E5894",
+  alloy_orange = "#C46210",
+  cobalt_cool = "#028AAE", sheen_green = "#8FD400", rose_gold = "#C88CA4",
+  petrified_forest = "#005B39", acid_wash_jeans = "#5CB2C5", big_dip_o_ruby = "#9C2542",
+  steel_blue = "#0081AB", gold_medal = "#C5BC42", magnetic_magenta = "#BF3981",
+  iron_indigo = "#184FA1", shimmering_blush = "#D98695", metallic_seaweed = "#0A7E8C",
+  cheese_grater = "#C89F56", bittersweet_shimmer = "#BF4F51", b_dazzled_blue = "#2E5894",
   illuminating_emerald = "#319177", robot_canary = "#9C7C38", cyber_grape = "#58427C",
   razzmic_berry = "#8D4E85", blast_off_bronze = "#A57164", deep_space_sparkle = "#4A646C",
   gold_fusion = "#85754E", sonic_silver = "#757575"
