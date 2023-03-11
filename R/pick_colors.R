@@ -34,10 +34,34 @@ pick_colors <- function(hex, n) {
   out
 }
 
-# color_distance <- function(hex) {
-#   hex |>
-#     grDevices::col2rgb() |>
-#     t() |>
-#     stats::dist() |>
-#     as.matrix()
-# }
+color_distance <- function(hex) {
+  hex |>
+    grDevices::col2rgb() |>
+    t() |>
+    stats::dist() |>
+    as.matrix()
+}
+
+color_order <- function(hex) {
+  clss <- class(hex)
+  dists <- color_distance(hex)
+
+  idx <- integer(length = length(hex))
+
+  mat <- dists
+  for (i in seq_along(idx)) {
+    sub_dists <- vapply(seq_along(idx), function(j) {
+      if (j %in% idx) return(Inf)
+      sum(mat[-j, ][, -j])
+    }, FUN.VALUE = numeric(1))
+    cat(which.min(sub_dists), '\n')
+
+    idx[i] <- which.min(sub_dists)
+    mat[i, ] <- 444 # dist white to black = 443.405
+    mat[, i] <- 444
+  }
+
+  out <- hex[idx]
+  class(out) <- clss
+  out
+}
