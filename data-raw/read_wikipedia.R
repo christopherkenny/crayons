@@ -20,7 +20,7 @@ standard <- tbls[[1]] %>%
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 fluorescent <- tbls[[2]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
@@ -30,7 +30,7 @@ fluorescent <- tbls[[2]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 # tbls[[3]] = fabric
 
@@ -50,7 +50,7 @@ silver_swirls <- tbls[[4]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 multicultural <- tbls[[5]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
@@ -60,7 +60,7 @@ multicultural <- tbls[[5]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 magic_scent <- tbls[[6]] %>%
   unlist() %>%
@@ -81,7 +81,7 @@ magic_scent <- tbls[[6]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 gem_tones <- tbls[[7]] %>%
   unlist() %>%
@@ -101,7 +101,7 @@ gem_tones <- tbls[[7]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 # should this be a gradient? it's two cols w/ similar outputs for some
 # changeables <- tbls[[8]] %>%
@@ -143,7 +143,7 @@ color_n_smell <- tbls[[9]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 star_brite <- tbls[[10]] %>%
   select(hexadecimal = `Hex Code`)
@@ -172,7 +172,7 @@ pearl_brite <- tbls[[12]] %>%
     name = str_replace_all(name, '_pearl', ''),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 # tbls[[13]] = glitter
 # tbls[[14]] = glitter 2019 (no hexadecimals)
@@ -187,7 +187,7 @@ metallic_fx <- tbls[[16]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 gel_fx <- tbls[[17]] %>%
   select(hexadecimal = `Hex Code`)
@@ -200,7 +200,7 @@ pearl <- tbls[[18]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 # tbls[[19]] = neon (no hexadecimals)
 
@@ -211,7 +211,7 @@ colors_of_the_world <- tbls[[20]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 silly_scents <- tbls[[21]] %>%
   select(name = `Color Name`, hexadecimal = `Hex Code`) %>%
@@ -221,7 +221,7 @@ silly_scents <- tbls[[21]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 heads_n_tails <- tbls[[22]] %>%
   unlist() %>%
@@ -239,7 +239,7 @@ heads_n_tails <- tbls[[22]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 billionth <- tbls[[23]] %>%
   select(name = Crayon, hexadecimal = `Hexadecimal code`) %>%
@@ -248,7 +248,7 @@ billionth <- tbls[[23]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 mini_twistables <- tbls[[24]] %>%
   select(name = Name, hexadecimal = `Hex Code`) %>%
@@ -261,7 +261,7 @@ mini_twistables <- tbls[[24]] %>%
     name = str_replace_all(name, '[^a-z]', '_'),
     hexadecimal = str_sub(hexadecimal, 1, 7)
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 # tbls[[25]] = true_to_life
 
@@ -289,7 +289,7 @@ munsell <- tbls_h[[2]] %>%
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 no_48 <- tbls_h[[3]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
@@ -300,7 +300,7 @@ no_48 <- tbls_h[[3]] %>%
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 no_64 <- tbls_h[[4]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
@@ -308,10 +308,11 @@ no_64 <- tbls_h[[4]] %>%
   mutate(
     name = tolower(name),
     name = str_replace_all(name, '[^a-z]', '_'),
+    hexadecimal = str_replace_all(hexadecimal, fixed('\t'), ''),
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 modern <- tbls_h[[5]] %>%
   select(Name, starts_with('Hexadecimal')) %>%
@@ -322,7 +323,7 @@ modern <- tbls_h[[5]] %>%
     hexadecimal = str_sub(hexadecimal, 1, 7),
     across(starts_with('box'), \(x) x == 'Yes')
   ) %>%
-  filter(hexadecimal != '')
+  filter(hexadecimal != '', nchar(hexadecimal) == 7)
 
 
 # save it ----
@@ -355,6 +356,23 @@ crayons <- list(
   standard64 = deframe(select(filter(standard, box_64), 1:2)),
   star_brite = deframe(star_brite)
 )
+
+crayons <- lapply(crayons, function(x) {
+  noms <- names(x)
+  if (is.null(noms)) {
+    return(x)
+  }
+  noms <- str_replace_all(noms, '__', '_')
+  noms <- vapply(noms, function(nom) {
+    if (str_sub(nom, -1L) == '_') {
+      str_sub(nom, end = -2L)
+    } else {
+      nom
+    }
+  }, FUN.VALUE = character(1))
+  names(x) <- noms
+  x
+})
 
 crayons <- lapply(crayons, function(x) {
   class(x) <- c('palette', 'character')

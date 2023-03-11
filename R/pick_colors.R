@@ -16,7 +16,11 @@ pick_colors <- function(hex, n) {
   rgbs <- hex |>
     grDevices::col2rgb() |>
     t()
-  km <- stats::kmeans(rgbs, n)
+  km <- local({
+    set.seed(1)
+    stats::kmeans(rgbs, n)
+  })
+
   mat <- rbind(
     km$centers,
     rgbs
@@ -47,21 +51,23 @@ color_order <- function(hex) {
   dists <- color_distance(hex)
 
   idx <- integer(length = length(hex))
-
-  mat <- dists
+  vect <- seq_along(idx)
   for (i in seq_along(idx)) {
-    sub_dists <- vapply(seq_along(idx), function(j) {
-      if (j %in% idx) return(Inf)
-      sum(mat[-j, ][, -j])
-    }, FUN.VALUE = numeric(1))
-    cat(which.min(sub_dists), '\n')
-
-    idx[i] <- which.min(sub_dists)
-    mat[i, ] <- 444 # dist white to black = 443.405
-    mat[, i] <- 444
+    if (i == 1) {
+      idx[i] <-  1L
+      vect <- vect[-1]
+    } else {
+      cur <- which.max(apply(dists[idx[1:(i - 1L)], -idx[1:(i - 1L)], drop = FALSE], 2, mean))
+      idx[i] <- vect[cur]
+      vect <- vect[-cur]
+    }
   }
 
   out <- hex[idx]
+  boring <- c('#FFFFFF', '#000000')
+  if (any(out %in% boring)) {
+    out <- c(out[-which(out %in% boring)], out[which(out %in% boring)])
+  }
   class(out) <- clss
   out
 }
