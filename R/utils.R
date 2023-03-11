@@ -15,27 +15,69 @@ rot_pal <- function(pal, manual = FALSE) {
 
 #' @export
 print.palette <- function(x, ...) {
-  x <- unclass(x)
-  print(x)
 
-  if (requireNamespace('cli', quietly = TRUE)) {
-    width_console <- getOption('width')
-    brks <- 0
-    n_char <- 1
-    cat('\U0020')
-    for (i in seq_along(x)) {
-      cat(cli::make_ansi_style(x[[i]], bg = TRUE)('\U0020\U0020\U0020'))
-      cat('\U0020')
-      n_char <- n_char + 4
-      if (n_char > width_console) {
-        brks <- brks + 1
-        n_char <- 0
-        cat('\n\n ')
+  width_console <- getOption('width')
+  len <- max(c(9, nchar(names(x)))) + 1L
+  n_per <- max(floor(width_console / len), 1)
+
+  i <- 1L
+  for (row in seq_len(ceiling(length(x) / n_per))) {
+    cat('  ')
+
+    if (!is.null(names(x))) {
+      for (co in seq_len(n_per)) {
+        if (i + co - 1L <= length(x)) {
+          cat(lpad(names(x)[[i + co - 1L]], len))
+        }
+      }
+      cat('\n  ')
+    }
+
+    for (co in seq_len(n_per)) {
+      if (i + co - 1L <= length(x)) {
+        cat(lpad(paste0('"', x[[i + co - 1L]], '"'), len))
       }
     }
+    cat('\n')
+
+    if (requireNamespace('cli', quietly = TRUE)) {
+      cat('  ')
+      for (co in seq_len(n_per)) {
+        if (i + co - 1L <= length(x)) {
+          cat(lpad('', len - 9))
+          cat(cli::make_ansi_style(x[[i + co - 1L]], bg = TRUE)('         '))
+        }
+      }
+      cat('\n')
+    }
+
+    i <- i + n_per
   }
 
+  # if (requireNamespace('cli', quietly = TRUE)) {
+  #   width_console <- getOption('width')
+  #   brks <- 0
+  #   n_char <- 1
+  #   cat(' ')
+  #   for (i in seq_along(x)) {
+  #     cat(cli::make_ansi_style(x[[i]], bg = TRUE)('   '))
+  #     cat(' ')
+  #     n_char <- n_char + 4
+  #     if (n_char > width_console) {
+  #       brks <- brks + 1
+  #       n_char <- 0
+  #       cat('\n\n ')
+  #     }
+  #   }
+  # }
+
   invisible(x)
+}
+
+# poorman's left pad string x to length len
+# beware: x needs to be length 1 but this isn't checked
+lpad <- function(x, len) {
+  paste0(paste0(rep(' ', each = len - nchar(x)), collapse = ''), x)
 }
 
 bocks <- function(r, c) {
