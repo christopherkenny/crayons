@@ -36,7 +36,7 @@ scale_fill_crayons <- function(palette = 'standard16', which = NULL, ...,
     pal <- rev(pal)
   }
   ggplot2::discrete_scale(aesthetics = 'fill', scale_name = palette,
-                          palette = rot_pal(pal))
+                          palette = rot_pal(pal, manual = !is.null(which)))
 }
 
 #' @rdname scale_crayons
