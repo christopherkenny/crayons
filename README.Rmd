@@ -46,7 +46,7 @@ mpg |>
 
 `crayons` has many palettes, based on current and long-gone crayon packs.
 
-```{r, echo = FALSE, fig.width=8}
+```{r, echo = FALSE, fig.width = 10, fig.height = 10}
 for (i in seq_along(crayons)) {
   p <- plot(crayons[[i]]) +
     ggplot2::labs(title = names(crayons)[[i]])
