@@ -18,7 +18,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-`crayons` provides crayon-based color palettes. For nostalgic uses, consider combining with [ggrough](https://github.com/xvrdm/ggrough) or [roughsf](https://github.com/schochastics/roughsf).
+`crayons` provides crayon-based color palettes. For nostalgic uses, consider combining with [ggrough](https://github.com/xvrdm/ggrough) or [roughsf](https://github.com/schochastics/roughsf). 
+
+These palettes are not necessarily (and unlikely to be) color-blind friendly. For public-facing work, consider a color-blind friendly package, such as [Cory McCartan's wacolors](https://github.com/corymccartan/wacolors).
 
 ## Installation
 
@@ -30,7 +32,7 @@ remotes::install_github('christopherkenny/crayons')
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+`crayons` provides basic ggplot2 scales for `fill` and `color` (also aliased as `colour`).
 
 ```{r example}
 library(ggplot2)
@@ -40,5 +42,15 @@ mpg |>
   ggplot() + 
   geom_point(aes(displ, hwy, colour = class)) + 
   scale_color_crayons(palette = 'original')
+```
+
+`crayons` has many palettes, based on current and long-gone crayon packs.
+
+```{r, echo = FALSE}
+for (i in seq_along(crayons)) {
+  p <- plot(crayons[[i]]) +
+    ggplot2::labs(title = names(crayons)[[i]])
+  print(p)
+}
 ```
 

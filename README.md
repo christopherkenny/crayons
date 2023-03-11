@@ -10,6 +10,11 @@
 consider combining with [ggrough](https://github.com/xvrdm/ggrough) or
 [roughsf](https://github.com/schochastics/roughsf).
 
+These palettes are not necessarily (and unlikely to be) color-blind
+friendly. For public-facing work, consider a color-blind friendly
+package, such as [Cory McCartan’s
+wacolors](https://github.com/corymccartan/wacolors).
+
 ## Installation
 
 You can install the development version of crayons from
@@ -21,7 +26,8 @@ remotes::install_github('christopherkenny/crayons')
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+`crayons` provides basic ggplot2 scales for `fill` and `color` (also
+aliased as `colour`).
 
 ``` r
 library(ggplot2)
@@ -34,3 +40,5 @@ mpg |>
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-5.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-6.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-7.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-8.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-9.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-10.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-11.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-12.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-13.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-14.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-15.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-16.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-17.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-18.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-19.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-20.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-21.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-22.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-23.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-24.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-25.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-26.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-27.png" width="100%" />
