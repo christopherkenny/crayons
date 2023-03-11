@@ -1,16 +1,16 @@
-#' Pick `n` Colors
-#'
-#' Places each color into RGB space, clusters them with kmeans, and returns the
-#' colors nearest each cluster center.
-#'
-#' @param hex a character vector of hexademical colors
-#' @param n the integer number of desired colors
-#'
-#' @return a character vector of length n
-#' @export
-#'
-#' @examples
-#' pick_colors(crayons$standard, 10)
+# Pick `n` Colors
+#
+# Places each color into RGB space, clusters them with kmeans, and returns the
+# colors nearest each cluster center.
+#
+# @param hex a character vector of hexademical colors
+# @param n the integer number of desired colors
+#
+# @return a character vector of length n
+# @export
+#
+# @examples
+# pick_colors(crayons$standard, 10)
 pick_colors <- function(hex, n) {
   clss <- class(hex)
   rgbs <- hex |>

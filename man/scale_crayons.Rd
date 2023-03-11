@@ -31,6 +31,14 @@ Crayon Color Scales for \code{ggplot2}
 }
 \examples{
 library(ggplot2)
-#TODO
+ggplot2::mpg |>
+  ggplot() +
+   geom_point(aes(displ, hwy, colour = class)) +
+   scale_color_crayons(palette = 'original')
+
+ggplot2::mpg |>
+  ggplot() +
+   geom_point(aes(displ, hwy, fill = class), pch = 23, color = 'transparent') +
+   scale_fill_crayons(palette = 'original')
 
 }

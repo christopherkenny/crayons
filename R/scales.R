@@ -7,7 +7,15 @@
 #'
 #' @examples
 #' library(ggplot2)
-#' #TODO
+#' ggplot2::mpg |>
+#'   ggplot() +
+#'    geom_point(aes(displ, hwy, colour = class)) +
+#'    scale_color_crayons(palette = 'original')
+#'
+#' ggplot2::mpg |>
+#'   ggplot() +
+#'    geom_point(aes(displ, hwy, fill = class), pch = 23, color = 'transparent') +
+#'    scale_fill_crayons(palette = 'original')
 #'
 #' @rdname scale_crayons
 #' @export
@@ -35,8 +43,8 @@ scale_fill_crayons <- function(palette = 'standard16', which = NULL, ...,
   if (reverse) {
     pal <- rev(pal)
   }
-  ggplot2::discrete_scale(aesthetics = 'fill', scale_name = palette,
-                          palette = rot_pal(pal, manual = !is.null(which)))
+  ggplot2::discrete_scale(aesthetics = 'fill', scale_name = palette, ...,
+                          palette = rot_pal(pal))
 }
 
 #' @rdname scale_crayons

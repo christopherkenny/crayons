@@ -374,6 +374,8 @@ crayons <- lapply(crayons, function(x) {
   x
 })
 
+crayons <- lapply(crayons, color_order)
+
 crayons <- lapply(crayons, function(x) {
   class(x) <- c('palette', 'character')
   x

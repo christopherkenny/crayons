@@ -1,12 +1,8 @@
-rot_pal <- function(pal, manual = FALSE) {
+rot_pal <- function(pal) {
   pal <- unname(pal)
   function(n) {
     if (n <= length(pal)) {
-      if (manual) {
-        pal[seq_len(n)]
-      } else {
-        pick_colors(pal, n)
-      }
+      pal[seq_len(n)]
     } else {
       rep(pal, ceiling(n / length(pal)))[seq_len(n)]
     }
