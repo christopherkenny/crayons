@@ -3,6 +3,7 @@
 S3method(plot,palette)
 S3method(print,palette)
 export(crayons)
+export(plot_palette)
 export(scale_color_crayons)
 export(scale_colour_crayons)
 export(scale_fill_crayons)

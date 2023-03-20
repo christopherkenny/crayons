@@ -45,8 +45,22 @@ print.palette <- function(x, ...) {
 #' @export
 #' @importFrom ggplot2 .data
 plot.palette <- function(x, ...) {
-  # this is my budget version of `scales::show_col()` in ggplot
+  plot_palette(x)
+}
 
+#' Plot Palette Colors
+#'
+#' Uses `ggplot2` for a non-base-plot implementation of `scales::show_col()`.
+#' Plots 6 digit hex code over colors.
+#'
+#' @param x A vector of colors.
+#'
+#' @return A `ggplot`
+#' @export
+#'
+#' @examples
+#' plot_palette(crayons$standard16)
+plot_palette <- function(x) {
   n <- length(x)
   x_in <- stats::setNames(x, x)
 
