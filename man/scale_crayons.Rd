@@ -22,7 +22,7 @@ scale_colour_crayons(
 
 \item{which}{numeric indices of colors to use. \code{NULL} by default.}
 
-\item{...}{arguments passed on to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}}}
+\item{...}{arguments passed on to \code{ggplot2::discrete_scale()}}
 
 \item{reverse}{Should the vector be reversed? Default is \code{FALSE}.}
 }

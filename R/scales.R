@@ -2,7 +2,7 @@
 #'
 #' @param palette palette from `names(crayons)` to use
 #' @param which numeric indices of colors to use. `NULL` by default.
-#' @param ... arguments passed on to [ggplot2::discrete_scale()]
+#' @param ... arguments passed on to `ggplot2::discrete_scale()`
 #' @param reverse Should the vector be reversed? Default is `FALSE`.
 #'
 #' @examples
