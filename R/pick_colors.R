@@ -1,16 +1,22 @@
-# Pick `n` Colors
-#
-# Places each color into RGB space, clusters them with kmeans, and returns the
-# colors nearest each cluster center.
-#
-# @param hex a character vector of hexademical colors
-# @param n the integer number of desired colors
-#
-# @return a character vector of length n
-# @export
-#
-# @examples
-# pick_colors(crayons$standard, 10)
+#' Heuristics for Color Distances and Locations
+#'
+#' * `pick_colors()` places each color into RGB space, clusters them with k-means,
+#' and returns the colors nearest each cluster center.
+#' * `color_order()` reorders colors so that subsequent colors are far from each other
+#' in RGB space.
+#' * `color_distance()` calculates pairwise distances in RGB space between colors.
+#'
+#' @param hex a character vector of hexadecimal colors
+#' @param n the integer number of desired colors
+#'
+#' @return a character vector that is a subset of `hex`, or a
+#' matrix of distances for `color_distance()`
+#' @export
+#'
+#' @examples
+#' pick_colors(crayons$standard, 10)
+#' color_order(crayons$standard)
+#' color_distance(crayons$standard[1:4])
 pick_colors <- function(hex, n) {
   clss <- class(hex)
   rgbs <- hex |>
@@ -38,6 +44,8 @@ pick_colors <- function(hex, n) {
   out
 }
 
+#' @rdname pick_colors
+#' @export
 color_distance <- function(hex) {
   hex |>
     grDevices::col2rgb() |>
@@ -46,8 +54,9 @@ color_distance <- function(hex) {
     as.matrix()
 }
 
+#' @rdname pick_colors
+#' @export
 color_order <- function(hex) {
-  clss <- class(hex)
   dists <- color_distance(hex)
 
   idx <- integer(length = length(hex))
@@ -68,6 +77,6 @@ color_order <- function(hex) {
   if (any(out %in% boring)) {
     out <- c(out[-which(out %in% boring)], out[which(out %in% boring)])
   }
-  class(out) <- clss
+
   out
 }
