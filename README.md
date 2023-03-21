@@ -19,7 +19,13 @@ wacolors](https://github.com/corymccartan/wacolors).
 
 ## Installation
 
-You can install the development version of crayons from
+`crayons` is available on CRAN and can be installed using:
+
+``` r
+install.packages('crayons')
+```
+
+You can also install the development version of crayons from
 [GitHub](https://github.com/) with:
 
 ``` r

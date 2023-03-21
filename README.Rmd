@@ -25,7 +25,13 @@ These palettes are not necessarily (and unlikely to be) color-blind friendly. Fo
 
 ## Installation
 
-You can install the development version of crayons from [GitHub](https://github.com/) with:
+`crayons` is available on CRAN and can be installed using:
+
+```r
+install.packages('crayons')
+```
+
+You can also install the development version of crayons from [GitHub](https://github.com/) with:
 
 ``` r
 remotes::install_github('christopherkenny/crayons')
