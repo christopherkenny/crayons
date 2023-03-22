@@ -1,3 +1,9 @@
+## Resubmission
+
+* Documented missing return value for `scale_crayons.Rd`
+* Removed call to `set.seed()` within `R/pick_colors.R`
+* Added a website reference to the description. (There is no article associated with this package.)
+
 ## Test environments
 * local R installation (macOS), R 4.2.2
 * local R installation (Windows), R 4.2.2

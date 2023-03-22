@@ -5,6 +5,8 @@
 #' @param ... arguments passed on to `ggplot2::discrete_scale()`
 #' @param reverse Should the vector be reversed? Default is `FALSE`.
 #'
+#' @return A [ggplot2::Scale]
+#'
 #' @examples
 #' library(ggplot2)
 #' ggplot2::mpg |>
@@ -49,4 +51,4 @@ scale_fill_crayons <- function(palette = 'standard16', which = NULL, ...,
 
 #' @rdname scale_crayons
 #' @export
-scale_colour_crayons = scale_color_crayons
+scale_colour_crayons <- scale_color_crayons

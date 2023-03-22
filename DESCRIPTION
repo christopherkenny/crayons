@@ -1,6 +1,6 @@
 Package: crayons
 Title: Color Palettes from Crayon Boxes 
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
@@ -8,7 +8,8 @@ Authors@R:
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: Provides color palettes based on crayon colors since the early 1900s. 
-    Colors are based on various crayon colors, sets, and promotional palettes. All 
+    Colors are based on various crayon colors, sets, and promotional palettes, most of
+    which can be found at <https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>. All 
     palettes are discrete palettes and are not necessarily color-blind friendly. 
     Provides scales for 'ggplot2' for discrete coloring.
 License: MIT + file LICENSE

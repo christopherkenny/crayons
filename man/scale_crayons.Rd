@@ -26,6 +26,9 @@ scale_colour_crayons(
 
 \item{reverse}{Should the vector be reversed? Default is \code{FALSE}.}
 }
+\value{
+A \link[ggplot2:ggplot2-ggproto]{ggplot2::Scale}
+}
 \description{
 Crayon Color Scales for \code{ggplot2}
 }

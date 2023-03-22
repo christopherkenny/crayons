@@ -22,10 +22,7 @@ pick_colors <- function(hex, n) {
   rgbs <- hex |>
     grDevices::col2rgb() |>
     t()
-  km <- local({
-    set.seed(1)
-    stats::kmeans(rgbs, n)
-  })
+  km <- stats::kmeans(rgbs, n)
 
   mat <- rbind(
     km$centers,
