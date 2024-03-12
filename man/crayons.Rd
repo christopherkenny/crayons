@@ -5,7 +5,7 @@
 \alias{crayons}
 \title{Crayons Color Palettes}
 \format{
-list of character vectors of type \code{c('palette', 'character')}
+list of \link[palette:palette]{palette::palette} vectors
 }
 \usage{
 crayons
