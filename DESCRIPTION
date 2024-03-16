@@ -20,5 +20,6 @@ URL: https://github.com/christopherkenny/crayons,
     http://christophertkenny.com/crayons/
 BugReports: https://github.com/christopherkenny/crayons/issues
 Imports:
+    ggplot2,
     grDevices,
     palette
