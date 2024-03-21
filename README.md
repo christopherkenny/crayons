@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/crayons)](https://CRAN.R-project.org/package=crayons)
+[![crayons status
+badge](https://christopherkenny.r-universe.dev/badges/crayons)](https://christopherkenny.r-universe.dev/crayons)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/christopherkenny/crayons/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/crayons/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
