@@ -1,3 +1,7 @@
+# crayons 0.0.4
+
+* Depends on R 4.1.0 or higher.
+
 # crayons 0.0.3
 
 * Now uses the [`palette`](https://christophertkenny.com/palette/) package for the palette class.
