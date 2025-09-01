@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Christopher T.",
            family = "Kenny",
            role = c("aut", "cre"),
-           email = "christopherkenny@fas.harvard.edu",
+           email = "ctkenny@proton.me",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: Provides color palettes based on crayon colors since the early 1900s. 
     Colors are based on various crayon colors, sets, and promotional palettes, most of
