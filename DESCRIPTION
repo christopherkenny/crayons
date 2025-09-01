@@ -1,6 +1,6 @@
 Package: crayons
 Title: Color Palettes from Crayon Boxes 
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
