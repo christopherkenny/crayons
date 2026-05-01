@@ -13,6 +13,7 @@ Description: Provides color palettes based on crayon colors since the early 1900
     palettes are discrete palettes and are not necessarily color-blind friendly. 
     Provides scales for 'ggplot2' for discrete coloring.
 License: MIT + file LICENSE
+Config/Needs/website: christopherkenny/ctktemplate
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
